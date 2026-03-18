@@ -1,0 +1,12 @@
+populationSize=100
+generations=500
+
+mutationRate=0.02
+crossoverRate=0.9
+
+mutation=swap
+crossover=ox
+selection=tournament
+
+elitism=true
+elitismRate=0.01
