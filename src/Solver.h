@@ -14,22 +14,18 @@ public:
 private:
 
     // apply helper
-    void applyMutation();
-    void applyCrossover();
-    void applySelection();
-
-    // mutations
-    void swapMutation();
-    void inversionMutation();
+    void applyMutation(std::vector<int>& perm, MutationType type);
+    std::pair<std::vector<int>, std::vector<int>> applyCrossover(const std::vector<int>& p1,const std::vector<int>& p2, CrossoverType type);
+    int applySelection(const std::vector<int>& fitness, SelectionType type);
 
     // crossovers
-    void OXCrossover();
-    void PMXCrossover();
-    void CXCrossover();
+    std::pair<std::vector<int>, std::vector<int>> OXCrossover(const std::vector<int>& p1, const std::vector<int>& p2);
+    std::pair<std::vector<int>, std::vector<int>> PMXCrossover(const std::vector<int>& p1, const std::vector<int>& p2);
+    std::pair<std::vector<int>, std::vector<int>> CXCrossover(const std::vector<int>& p1, const std::vector<int>& p2);
 
     // selections
-    void tournamentSelection();
-    void roulleteSelection();
+    int tournamentSelection(const std::vector<int>& fitness);
+    int rouletteSelection(const std::vector<int>& fitness);
 };
 
 

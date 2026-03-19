@@ -1,12 +1,12 @@
 populationSize=100
 generations=500
 
-mutationRate=0.02
-crossoverRate=0.9
+mutationRate=0.01
+crossoverRate=0.2
 
 mutation=swap
 crossover=ox
 selection=tournament
 
 elitism=true
-elitismRate=0.01
+elitismRate=0.1

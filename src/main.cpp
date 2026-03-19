@@ -7,7 +7,7 @@
 int main()
 {
     PFSPInstance instance;
-    if(!instance.loadFromFile("../PFSP/tai20_5_0.fsp")) return 1;
+    if(!instance.loadFromFile("../PFSP/tai500_20_0.fsp")) return 1;
 
     instance.printInstanceInfo();
     if (instance.getJobs() <= 20 && instance.getMachines() <= 20) instance.printInstance();
@@ -17,9 +17,9 @@ int main()
 
     Solver solver;
 
-    //std::vector<int> result = solver.solveRandom(instance, 5000);
+    //std::vector<int> result = solver.solveRandom(instance, 50000);
     //std::vector<int> result = solver.solveGreedy(instance);
-    //std::vector<int> result = solver.solveSimulatedAnnealing(instance, 5000, 1000, 0.995);
+    //std::vector<int> result = solver.solveSimulatedAnnealing(instance, 50000, 1000, 0.995);
     std::vector<int> result = solver.solveGeneticAlgorithm(instance, config);
 
     printConfig(config);
